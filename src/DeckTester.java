@@ -9,5 +9,8 @@ public class DeckTester {
         System.out.println(x.size()+ " " + y.size()+ " " +z.size());
         System.out.println(x.isEmpty() + " " + y.isEmpty() + " " + z.isEmpty());
         System.out.println(x.deal().toString() +"\t" + y.deal().toString() + "\t" + z.deal().toString());
+        System.out.println(x.toString());
+        System.out.println(y.toString());
+        System.out.println(z.toString());
     }
 }
