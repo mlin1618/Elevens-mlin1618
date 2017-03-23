@@ -34,6 +34,16 @@ public class Deck {
      */
     public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+        Random r = new Random();
+        for(int i = 0; i < cards.size()-1; i++){
+            int temp = r.nextInt(cards.size()-i-1) + i + 1;
+            Card temp2 = new Card(cards.get(i).rank(), cards.get(i).suit(), cards.get(i).pointValue());
+            cards.remove(i);
+            cards.add(i, cards.get(temp-1));
+            cards.remove(temp);
+            cards.add(temp,temp2);
+        }
+        size = cards.size();
     }
     @Override
     public String toString() {
