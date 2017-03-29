@@ -8,7 +8,7 @@ public class deckMaker {
         while(true){
             System.out.println(s);
             num = scans.next();
-            if(num.matches("\\d+")) {
+            if(num.matches("^-?\\d+")) {
                 x =Integer.parseInt(num);
                 if(!positive)
                     break;
@@ -28,14 +28,12 @@ public class deckMaker {
         //System.out.println("how many different suits: (enter integer)");
         int suitNum = getUserInt("how many different suits: (enter positive integer)",true);
         System.out.println("names of each suit:");
-        sc.nextLine();
         ArrayList<String> suitNames = new ArrayList<String>();
         for(int i = 0; i < suitNum; i++){
             suitNames.add(sc.nextLine());
         }
-        int lowest = getUserInt("enter lowest card: ",false);
-        int highest = getUserInt("enter highest card: ", false);
-        sc.nextLine();
+        int lowest = getUserInt("enter lowest card value: ",false);
+        //int highest = getUserInt("enter highest card: ", false);
         System.out.println("standard face? ace, jack, king, queen? enter 'yes' for yes, anything else for no");
         boolean b = sc.nextLine().equalsIgnoreCase("yes")? true:false;
         String[] faces = {"jack", "king", "queen", "ace"};
@@ -53,8 +51,8 @@ public class deckMaker {
                 extraCardNums.add(getUserInt("enter how many",false));
             }
         }
-        String extra = sc.next();
-        int extraAmount = sc.nextInt();
+        //String extra = sc.next();
+        //int extraAmount = sc.nextInt();
         for(int i = 0; i < suitNames.size(); i++){
             for(int j = 0; j < suitEach; j++){
                 System.out.println(lowest + j + " of " + suitNames.get(i));
