@@ -259,6 +259,14 @@ public class ElevensBoard {
 	 */
 	private boolean containsPairSum11(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		for(int i = 0; i < selectedCards.size(); i++){
+			for(int j = i+1; j < selectedCards.size(); j++){
+				if(cards[selectedCards.get(0)].pointValue() + cards[selectedCards.get(1)].pointValue() ==11){
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -271,5 +279,15 @@ public class ElevensBoard {
 	 */
 	private boolean containsJQK(List<Integer> selectedCards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
+		boolean[] b = new boolean[3];
+		for(int i = 0; i < selectedCards.size(); i++){
+			for(int k = 0; k < 3; k++){
+				if(cards[i].rank().equalsIgnoreCase(RANKS[k+10])){
+					b[k] = true;
+				}
+			}
+		}
+		return b[0]&&b[1]&&b[2];
+
 	}
 }
